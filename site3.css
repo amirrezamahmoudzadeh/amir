@@ -18,6 +18,7 @@ input , select , textarea{
 }
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    scroll-behavior: smooth;
 }
 .wrapper{
     width: 80%;
@@ -50,6 +51,7 @@ a{
 }
 .main_nav span{
     display: none;
+    z-index: 10;
 }
 .main_nav ul{
     display: flex;
@@ -317,6 +319,9 @@ a{
 .conect .wrapper form>input:focus{
     outline: none;
 }
+.child2{
+    text-align: center;
+}
 textarea{
    resize: none;
    text-align: center;
@@ -339,17 +344,20 @@ input{
         position: fixed;
         left: 0;
         top: 0;
-        line-height: 7rem;
+        line-height: 4rem;
         background-color: #a3a3a3;
         opacity: 0.96;
         text-align: center;
         height: 100vh;
         margin-top: 0;
+        z-index: 9;
     }
     .main_nav ul li{
         font-size: 1em;
         padding-left: 1.5rem;
         border-bottom: var(--manin-color) 1px solid ;
+        flex-grow: 1;
+        flex-shrink: 1;
     }
     .main_nav ul li a{
         padding-bottom: 1rem;
@@ -357,6 +365,10 @@ input{
     }
     .logo{
         margin-top: 0.8rem;
+    }
+    .landing{
+        background-position: left 15% center;
+        height: 70vh;
     }
 
 }
@@ -384,16 +396,18 @@ input{
 @media (max-width:600px){
     .fath{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .conect .wrapper{
         height: 100vh;
         width: 100%;
     }
-    textarea , .child1 input{
+    .child1 input{
         width: 100%;
     }
-    textarea:focus , .child1 input:focus{
-        width: 100%;
+    textarea{
+        width: 80%;
     }
     .child1{
         margin-right: 0;
@@ -420,6 +434,10 @@ input{
     .conect .wrapper h3{
         font-size: 1.6em;
     }
+    .landing{
+        background-position:center left;
+        height: 55vh;
+    }
 }
 @media (max-width:450px){
     .main_nav span{
@@ -444,5 +462,12 @@ input{
     }
     .post img{
         height: 26vh;
+    }
+    .persons article img{
+        width: 80%;
+        margin-bottom: 0.5rem;
+    }
+    .landing{
+        height: 62vh;
     }
 }
